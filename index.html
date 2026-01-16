@@ -9,98 +9,138 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Noto Sans TC', sans-serif; background-color: #f3f4f6; }
-        .timeline-line { position: absolute; left: 24px; top: 20px; bottom: 20px; width: 2px; background-color: #e5e7eb; z-index: 0; }
+        /* Timeline line styling */
+        .timeline-line { position: absolute; left: 28px; top: 30px; bottom: 50px; width: 3px; background-color: #e5e7eb; z-index: 0; }
         .card { z-index: 10; position: relative; }
         .weather-badge { background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); border-radius: 12px; padding: 4px 12px; font-size: 0.8rem; }
+        /* Driving info badge styling */
+        .drive-badge { 
+            position: relative; 
+            margin-left: 56px; 
+            margin-bottom: 20px; 
+            margin-top: -10px;
+            display: inline-flex;
+            align-items: center;
+            background-color: #eef2ff; 
+            color: #4f46e5; 
+            font-size: 0.75rem; 
+            font-weight: bold; 
+            padding: 4px 10px; 
+            border-radius: 9999px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            z-index: 5;
+        }
+        .drive-badge i { margin-right: 6px; }
     </style>
 </head>
-<body class="pb-12">
+<body class="pb-16">
 
-    <header class="bg-gradient-to-r from-red-500 to-pink-500 text-white p-6 rounded-b-3xl shadow-lg sticky top-0 z-50">
+    <header class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-6 rounded-b-3xl shadow-lg sticky top-0 z-50">
         <div class="flex justify-between items-start">
             <div>
                 <h1 class="text-2xl font-bold mb-1">🍓 關西 & 鶯歌</h1>
-                <p class="text-red-100 text-sm opacity-90">1/17 (六) 家庭一日遊</p>
+                <p class="text-indigo-100 text-sm opacity-90">1/17 (六) 親子一日遊</p>
             </div>
             <div class="text-right">
                 <div class="weather-badge mb-1">
                     <i class="fas fa-sun text-yellow-300 mr-1"></i> 24°C
                 </div>
-                <div class="text-xs text-red-100">晴時多雲</div>
+                <div class="text-xs text-indigo-100">晴時多雲</div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-md mx-auto p-4 relative">
+    <main class="max-w-md mx-auto p-4 relative pt-8">
         <div class="timeline-line"></div>
 
-        <div class="flex gap-4 mb-8 relative">
-            <div class="flex-none w-12 h-12 bg-gray-500 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-gray-100 ring-2 ring-white">
-                <i class="fas fa-home"></i>
+        <div class="flex gap-4 mb-2 relative">
+            <div class="flex-none w-14 h-14 bg-gray-500 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-gray-100 ring-2 ring-white">
+                <i class="fas fa-home text-xl"></i>
             </div>
             <div class="flex-1 bg-white p-4 rounded-xl shadow-sm card">
                 <div class="flex justify-between items-baseline mb-2">
                     <h3 class="font-bold text-gray-800 text-lg">蘆竹溫暖的家</h3>
                     <span class="text-sm font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">09:00</span>
                 </div>
-                <p class="text-gray-500 text-sm mb-3">快樂出發！記得帶水壺、外套。</p>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=蘆竹區順利二街4號" target="_blank" class="block w-full text-center py-3 bg-gray-100 text-gray-600 rounded-lg text-sm font-bold hover:bg-gray-200 transition">
+                <p class="text-gray-500 text-sm mb-3">檢查水壺、外套、推車。</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=蘆竹區順利二街4號" target="_blank" class="block w-full text-center py-2 bg-gray-100 text-gray-600 rounded-lg text-sm font-bold hover:bg-gray-200 transition">
                     <i class="fas fa-map-marker-alt mr-2"></i> 設定導航起點
                 </a>
             </div>
         </div>
 
-        <div class="flex gap-4 mb-8 relative">
-            <div class="flex-none w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-pink-100 ring-2 ring-white">
-                <i class="fas fa-leaf"></i>
+        <div class="drive-badge">
+            <i class="fas fa-car"></i> 約 50-60 分 (50km)
+        </div>
+
+        <div class="flex gap-4 mb-2 relative">
+            <div class="flex-none w-14 h-14 bg-pink-500 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-pink-100 ring-2 ring-white">
+                <i class="fas fa-leaf text-xl"></i>
             </div>
             <div class="flex-1 bg-white p-4 rounded-xl shadow-sm card border-l-4 border-pink-500">
-                <div class="flex justify-between items-baseline mb-2">
+                <div class="flex justify-between items-baseline mb-1">
                     <h3 class="font-bold text-gray-800 text-lg">長鑫莓果農園</h3>
                     <span class="text-sm font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">10:00</span>
                 </div>
-                <p class="text-gray-500 text-sm mb-3">高架草莓園，推車好走。<br>預計停留 1.5 小時。</p>
+                <div class="text-xs text-gray-400 mb-3 flex items-center">
+                    <i class="far fa-clock mr-1"></i> 停留約 1.5 小時
+                </div>
+                <p class="text-gray-600 text-sm mb-3">高架草莓園，長輩免彎腰、推車好走。</p>
                 <a href="https://www.google.com/maps/dir/?api=1&destination=長鑫莓果農園" target="_blank" class="block w-full text-center py-3 bg-pink-50 text-pink-600 rounded-lg text-sm font-bold hover:bg-pink-100 transition shadow-sm">
                     <i class="fas fa-location-arrow mr-2"></i> 導航去採草莓
                 </a>
             </div>
         </div>
 
-        <div class="flex gap-4 mb-8 relative">
-            <div class="flex-none w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-orange-100 ring-2 ring-white">
-                <i class="fas fa-utensils"></i>
+        <div class="drive-badge">
+            <i class="fas fa-car"></i> 約 25 分 (24km)
+        </div>
+
+        <div class="flex gap-4 mb-2 relative">
+            <div class="flex-none w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-orange-100 ring-2 ring-white">
+                <i class="fas fa-utensils text-xl"></i>
             </div>
             <div class="flex-1 bg-white p-4 rounded-xl shadow-sm card border-l-4 border-orange-500">
-                <div class="flex justify-between items-baseline mb-2">
-                    <h3 class="font-bold text-gray-800 text-lg">香村花園客家菜</h3>
-                    <span class="text-sm font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">11:45</span>
+                <div class="flex justify-between items-baseline mb-1">
+                    <h3 class="font-bold text-gray-800 text-lg">稻吃甘鷓 (午餐)</h3>
+                    <span class="text-sm font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">12:00</span>
                 </div>
-                <p class="text-gray-500 text-sm mb-3">必點：炸豬腳、仙草雞湯。<br>好停車。</p>
+                <div class="text-xs text-gray-400 mb-3 flex items-center">
+                    <i class="far fa-clock mr-1"></i> 停留約 1.5 小時
+                </div>
+                <p class="text-gray-600 text-sm mb-3">精緻客家菜，有大草皮可讓小孩跑跑，環境舒適。</p>
                 <div class="flex gap-3">
-                    <a href="tel:035877940" class="flex-1 text-center py-3 bg-gray-50 text-gray-600 rounded-lg text-sm border border-gray-200 hover:bg-gray-100">
+                    <a href="tel:034608866" class="flex-1 text-center py-3 bg-gray-50 text-gray-600 rounded-lg text-sm border border-gray-200 hover:bg-gray-100">
                         <i class="fas fa-phone mr-1"></i> 訂位
                     </a>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=香村花園客家菜" target="_blank" class="flex-1 text-center py-3 bg-orange-50 text-orange-600 rounded-lg text-sm font-bold hover:bg-orange-100 shadow-sm">
+                    <a href="https://maps.google.com/?cid=12073093799571563829&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="flex-1 text-center py-3 bg-orange-50 text-orange-600 rounded-lg text-sm font-bold hover:bg-orange-100 shadow-sm">
                         <i class="fas fa-location-arrow mr-1"></i> 導航
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="flex gap-4 mb-8 relative">
-            <div class="flex-none w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-blue-100 ring-2 ring-white">
-                <i class="fas fa-coffee"></i>
+        <div class="drive-badge">
+            <i class="fas fa-car"></i> 約 30 分 (20km)
+        </div>
+
+        <div class="flex gap-4 mb-2 relative">
+            <div class="flex-none w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-blue-100 ring-2 ring-white">
+                <i class="fas fa-coffee text-xl"></i>
             </div>
             <div class="flex-1 bg-white p-4 rounded-xl shadow-sm card border-l-4 border-blue-600">
-                <div class="flex justify-between items-baseline mb-2">
+                <div class="flex justify-between items-baseline mb-1">
                     <h3 class="font-bold text-gray-800 text-lg">新旺集瓷 (鶯歌)</h3>
                     <span class="text-sm font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">14:30</span>
                 </div>
-                <p class="text-gray-500 text-sm mb-2">預約玩陶：寶寶手印、手拉坏。<br>結束可逛老街吃豆花。</p>
+                <div class="text-xs text-gray-400 mb-3 flex items-center">
+                    <i class="far fa-clock mr-1"></i> 停留約 2 小時
+                </div>
+                <p class="text-gray-600 text-sm mb-2">預約玩陶：寶寶手印、手拉坏。</p>
                 
-                <div class="bg-yellow-50 text-yellow-800 text-xs p-3 rounded-lg mb-3 flex items-start">
-                    <i class="fas fa-info-circle mt-1 mr-2"></i>
-                    <span>建議停「鶯歌國小地下停車場」，有電梯方便推車。</span>
+                <div class="bg-yellow-50 text-yellow-800 text-xs p-3 rounded-lg mb-3">
+                    <i class="fas fa-info-circle mr-1"></i>
+                    建議停「鶯歌國小地下停車場」。
                 </div>
 
                 <div class="grid grid-cols-1 gap-3">
@@ -111,9 +151,13 @@
             </div>
         </div>
 
+        <div class="drive-badge">
+            <i class="fas fa-car"></i> 約 40 分 (23km)
+        </div>
+
         <div class="flex gap-4 relative">
-            <div class="flex-none w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-green-100 ring-2 ring-white">
-                <i class="fas fa-flag-checkered"></i>
+            <div class="flex-none w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-md z-10 border-4 border-green-100 ring-2 ring-white">
+                <i class="fas fa-flag-checkered text-xl"></i>
             </div>
             <div class="flex-1 bg-white p-4 rounded-xl shadow-sm card">
                 <div class="flex justify-between items-baseline mb-2">
